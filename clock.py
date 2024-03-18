@@ -7,6 +7,7 @@ class Clock:
     
     @property
     def hora1(self):
+        '''Retorna a hora do relógio.'''
         return f'{self.__horas}'
     
     @hora1.setter
@@ -20,6 +21,7 @@ class Clock:
 
     @property
     def Minutos1(self):
+        '''Retorna os minutos do relógio.'''
         return f'{self.__minutos}'
     
     @Minutos1.setter
@@ -35,6 +37,7 @@ class Clock:
     
     @property
     def segundos1(self):
+        '''Retorna os segundos do relógio.'''
         return f'{self.__segundos}'
     
     @segundos1.setter
@@ -42,8 +45,12 @@ class Clock:
         '''Muda os segundos do relógio. Se o valor nao for entre 0 e 59, imprime uma mensagem de erro.'''
         self.__segundos = valor if 0 <= valor <= 59 else print("Segundos inválidos")
 
-      
+    def soma_segundo(self, valor):
+        '''soma os segundos do relógio com o segundos passada.'''
+        total_segundos = self.__segundos + valor
+        self.__segundos = total_segundos % 60
+        self.soma_minuto(total_segundos // 60)    
 
-    def time(self):
+    def __str__(self)->str:
         '''Retorna o horário atual do relógio.'''
         return f'{self.__horas:02}:{self.__minutos:02}:{self.__segundos:02}'    

@@ -1,16 +1,19 @@
 from clock import Clock
 
 timer = Clock()
+
+#metodos get e setter
 timer.hora2 = 22
 timer.Minutos1 = 50
 timer.segundos1 = 40
-print(timer.hora1 + ":", end=" ")
-#timer.soma_hora(20)
-print(timer.Minutos1 + ":", end=" ")
-timer.soma_minuto(70)
-print(timer.segundos1)
 
-print(timer.time())
+#metodos de soma de horas, minutos e segundos (cada metodo esta documentado)
+
+timer.soma_hora(0)
+timer.soma_minuto(0)
+timer.soma_segundo(0)
+
+print(timer)
 
 
 
